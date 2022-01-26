@@ -1,0 +1,30 @@
+entity Akte{
+aktenthema String,
+organisationsEinheit String,
+aktenMeter Long,
+haengend Boolean,
+standort String
+}
+
+entity Raum{
+gebaeude String,
+raumnummer Long,
+etage Long,
+zusatz String
+}
+
+relationship OneToMany{
+Raum{akte} to Akte{raum}
+}
+
+
+paginate Akte, Raum with infinite-scroll
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220126105258",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "akte",
+  "fields": [
+    {
+      "fieldName": "aktenthema",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "organisationsEinheit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "aktenMeter",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "haengend",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "standort",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Akte",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "raum",
+      "otherEntityRelationshipName": "akte",
+      "relationshipName": "raum",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

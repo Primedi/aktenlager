@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220126105259",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "raum",
+  "fields": [
+    {
+      "fieldName": "gebaeude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "raumnummer",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "etage",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "zusatz",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Raum",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "akte",
+      "otherEntityRelationshipName": "raum",
+      "relationshipName": "akte",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

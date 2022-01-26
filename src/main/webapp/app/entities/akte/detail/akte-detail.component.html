@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="akte">
+      <h2 data-cy="akteDetailsHeading"><span>Akte</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ akte.id }}</span>
+        </dd>
+        <dt><span>Aktenthema</span></dt>
+        <dd>
+          <span>{{ akte.aktenthema }}</span>
+        </dd>
+        <dt><span>Organisations Einheit</span></dt>
+        <dd>
+          <span>{{ akte.organisationsEinheit }}</span>
+        </dd>
+        <dt><span>Akten Meter</span></dt>
+        <dd>
+          <span>{{ akte.aktenMeter }}</span>
+        </dd>
+        <dt><span>Haengend</span></dt>
+        <dd>
+          <span>{{ akte.haengend }}</span>
+        </dd>
+        <dt><span>Standort</span></dt>
+        <dd>
+          <span>{{ akte.standort }}</span>
+        </dd>
+        <dt><span>Raum</span></dt>
+        <dd>
+          <div *ngIf="akte.raum">
+            <a [routerLink]="['/raum', akte.raum?.id, 'view']">{{ akte.raum?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/akte', akte.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

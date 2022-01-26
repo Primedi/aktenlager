@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-akte-heading" data-cy="AkteCreateUpdateHeading">Create or edit a Akte</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_aktenthema">Aktenthema</label>
+          <input
+            type="text"
+            class="form-control"
+            name="aktenthema"
+            id="field_aktenthema"
+            data-cy="aktenthema"
+            formControlName="aktenthema"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_organisationsEinheit">Organisations Einheit</label>
+          <input
+            type="text"
+            class="form-control"
+            name="organisationsEinheit"
+            id="field_organisationsEinheit"
+            data-cy="organisationsEinheit"
+            formControlName="organisationsEinheit"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_aktenMeter">Akten Meter</label>
+          <input
+            type="number"
+            class="form-control"
+            name="aktenMeter"
+            id="field_aktenMeter"
+            data-cy="aktenMeter"
+            formControlName="aktenMeter"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_haengend">Haengend</label>
+          <input type="checkbox" class="form-check" name="haengend" id="field_haengend" data-cy="haengend" formControlName="haengend" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_standort">Standort</label>
+          <input type="text" class="form-control" name="standort" id="field_standort" data-cy="standort" formControlName="standort" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_raum">Raum</label>
+          <select class="form-control" id="field_raum" data-cy="raum" name="raum" formControlName="raum">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="raumOption.id === editForm.get('raum')!.value?.id ? editForm.get('raum')!.value : raumOption"
+              *ngFor="let raumOption of raumsSharedCollection; trackBy: trackRaumById"
+            >
+              {{ raumOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
