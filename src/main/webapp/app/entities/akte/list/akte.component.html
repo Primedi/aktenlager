@@ -38,7 +38,6 @@
           <th scope="col" jhiSortBy="aktenMeter"><span>Akten Meter</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="haengend"><span>Haengend</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="standort"><span>Standort</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="raum.id"><span>Raum</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -51,10 +50,9 @@
           <td>{{ akte.organisationsEinheit }}</td>
           <td>{{ akte.aktenMeter }}</td>
           <td>{{ akte.haengend }}</td>
-          <td>{{ akte.standort }}</td>
           <td>
             <div *ngIf="akte.raum">
-              <a [routerLink]="['/raum', akte.raum?.id, 'view']">{{ akte.raum?.id }}</a>
+              <a [routerLink]="['/raum', akte.raum?.id, 'view']">{{ akte.standort }}</a>
             </div>
           </td>
           <td class="text-right">
