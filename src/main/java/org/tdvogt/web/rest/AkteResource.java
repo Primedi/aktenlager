@@ -185,6 +185,16 @@ public class AkteResource {
         return ResponseUtil.wrapOrNotFound(ret);
     }
 
+    @GetMapping("/aktes/notHaengend")
+    public ResponseEntity<Akte> getNotHaengend() {
+        log.debug("REST request to get Summe der nicht haengenden Akten");
+        Long meter = akteService.getAktenMeterNotHaengend();
+        Akte buff = new Akte();
+        buff.setAktenMeter(meter);
+        Optional<Akte> ret = Optional.of(buff);
+        return ResponseUtil.wrapOrNotFound(ret);
+    }
+
     /**
      * {@code DELETE  /aktes/:id} : delete the "id" akte.
      *
