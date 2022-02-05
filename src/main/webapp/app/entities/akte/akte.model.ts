@@ -8,7 +8,6 @@ export interface IAkte {
   haengend?: boolean | null;
   standort?: string | null;
   raum?: IRaum | null;
-  aktenHaengend?: number | null;
 }
 
 export class Akte implements IAkte {
@@ -19,8 +18,7 @@ export class Akte implements IAkte {
     public aktenMeter?: number | null,
     public haengend?: boolean | null,
     public standort?: string | null,
-    public raum?: IRaum | null,
-    public aktenHaengend?: number | null
+    public raum?: IRaum | null
   ) {
     this.haengend = this.haengend ?? false;
   }
