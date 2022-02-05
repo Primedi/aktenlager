@@ -6,7 +6,6 @@ import { AkteComponent } from '../list/akte.component';
 import { AkteDetailComponent } from '../detail/akte-detail.component';
 import { AkteUpdateComponent } from '../update/akte-update.component';
 import { AkteRoutingResolveService } from './akte-routing-resolve.service';
-import { AkteSummeComponent } from '../summe/akte-summe.component';
 
 const akteRoute: Routes = [
   {
@@ -33,14 +32,6 @@ const akteRoute: Routes = [
   {
     path: ':id/edit',
     component: AkteUpdateComponent,
-    resolve: {
-      akte: AkteRoutingResolveService,
-    },
-    canActivate: [UserRouteAccessService],
-  },
-  {
-    path: 'summe',
-    component: AkteSummeComponent,
     resolve: {
       akte: AkteRoutingResolveService,
     },
