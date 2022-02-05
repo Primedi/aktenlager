@@ -22,6 +22,7 @@ export class AkteComponent implements OnInit {
   predicate: string;
   ascending: boolean;
   gesamtmeter: number;
+  haengend: number;
 
   constructor(protected akteService: AkteService, protected modalService: NgbModal, protected parseLinks: ParseLinks) {
     this.aktes = [];
@@ -34,6 +35,7 @@ export class AkteComponent implements OnInit {
     this.ascending = true;
     this.gesamtmeter = 0;
     this.getGesamtmeter();
+    this.haengend = 0;
   }
 
   loadAll(): void {
