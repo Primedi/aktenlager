@@ -13,4 +13,7 @@ import org.tdvogt.domain.Akte;
 public interface AkteRepository extends JpaRepository<Akte, Long> {
     @Query("select sum(aktenMeter) from Akte where haengend = true")
     public Long sumAktenMeterByHaengend();
+
+    @Query("select sum(aktenMeter) from Akte where haengend = false")
+    public Long sumAktenMeterByNotHaengend();
 }
