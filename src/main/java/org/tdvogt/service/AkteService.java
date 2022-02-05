@@ -53,4 +53,7 @@ public interface AkteService {
      * @return die Gesamtmeterzahl an Akten aus allen Räumen
      */
     Long getGesamtmeter();
+
+    Long getAktenmeterHaengend();
+    //Long getAktenMeterNotHaengend();
 }
