@@ -36,6 +36,7 @@ export class AkteComponent implements OnInit {
     this.gesamtmeter = 0;
     this.getGesamtmeter();
     this.haengend = 0;
+    this.getHaengend();
   }
 
   loadAll(): void {
