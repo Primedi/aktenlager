@@ -60,7 +60,13 @@ export class AkteComponent implements OnInit {
 
   getGesamtmeter(): void {
     this.akteService.getGesamtmeter().subscribe(({ body }) => {
-      this.gesamtmeter = body!.aktenMeter ?? 20;
+      this.gesamtmeter = body!.aktenMeter ?? 0;
+    });
+  }
+
+  getHaengend(): void {
+    this.akteService.getHaengend().subscribe(({ body }) => {
+      this.haengend = body!.aktenHaengend ?? 0;
     });
   }
 
