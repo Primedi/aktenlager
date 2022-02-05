@@ -97,9 +97,9 @@ public class AkteServiceImpl implements AkteService {
         log.debug("Request to get Gesamtmeteranzahl aller haengenden Akten");
         return akteRepository.sumAktenMeterByHaengend();
     }
-    /*@Override
+
+    @Override
     public Long getAktenMeterNotHaengend() {
-        return null;
+        return akteRepository.sumAktenMeterByNotHaengend();
     }
-    */
 }

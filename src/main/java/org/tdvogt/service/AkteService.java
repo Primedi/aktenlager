@@ -55,5 +55,5 @@ public interface AkteService {
     Long getGesamtmeter();
 
     Long getAktenmeterHaengend();
-    //Long getAktenMeterNotHaengend();
+    Long getAktenMeterNotHaengend();
 }
