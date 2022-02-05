@@ -166,10 +166,13 @@ public class AkteResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the akte, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/aktes/summe")
-    public ResponseEntity<Long> getSumme() {
+    public ResponseEntity<Akte> getSumme() {
         log.debug("REST request to get Summe der Aktenmeter");
         Long meteranzahl = akteService.getGesamtmeter();
-        return ResponseUtil.wrapOrNotFound(Optional.of(meteranzahl));
+        Akte buff = new Akte();
+        buff.setAktenMeter(meteranzahl);
+        Optional<Akte> ret = Optional.of(buff);
+        return ResponseUtil.wrapOrNotFound(ret);
     }
 
     /**
