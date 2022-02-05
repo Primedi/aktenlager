@@ -1,5 +1,6 @@
 package org.tdvogt.repository;
 
+import java.util.List;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 import org.tdvogt.domain.Akte;
@@ -9,4 +10,7 @@ import org.tdvogt.domain.Akte;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AkteRepository extends JpaRepository<Akte, Long> {}
+public interface AkteRepository extends JpaRepository<Akte, Long> {
+    @Query("select sum(aktenMeter) from Akte where haengend = true")
+    public Long sumAktenMeterByHaengend();
+}
