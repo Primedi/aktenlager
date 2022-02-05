@@ -39,6 +39,7 @@ export class AkteComponent implements OnInit {
     this.haengend = 0;
     this.getHaengend();
     this.notHaengend = 0;
+    this.getNotHaengend();
   }
 
   loadAll(): void {
