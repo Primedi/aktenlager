@@ -41,6 +41,10 @@ export class AkteService {
     return this.http.get<IAkte>(`${this.resourceUrl}/summe`, { observe: 'response' });
   }
 
+  getHaengend(): Observable<EntityResponseType> {
+    return this.http.get(`${this.resourceUrl}/haengend`, { observe: 'response' });
+  }
+
   delete(id: number): Observable<HttpResponse<{}>> {
     return this.http.delete(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
