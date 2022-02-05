@@ -21,6 +21,7 @@ export class AkteComponent implements OnInit {
   page: number;
   predicate: string;
   ascending: boolean;
+  gesamtmeter: number;
 
   constructor(protected akteService: AkteService, protected modalService: NgbModal, protected parseLinks: ParseLinks) {
     this.aktes = [];
@@ -31,6 +32,8 @@ export class AkteComponent implements OnInit {
     };
     this.predicate = 'id';
     this.ascending = true;
+    this.gesamtmeter = 0;
+    this.getGesamtmeter();
   }
 
   loadAll(): void {
@@ -51,6 +54,12 @@ export class AkteComponent implements OnInit {
           this.isLoading = false;
         },
       });
+  }
+
+  getGesamtmeter(): void {
+    this.akteService.getGesamtmeter().subscribe(({ body }) => {
+      this.gesamtmeter = body!.aktenMeter ?? 20;
+    });
   }
 
   reset(): void {
