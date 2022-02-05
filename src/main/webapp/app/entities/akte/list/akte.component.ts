@@ -75,7 +75,7 @@ export class AkteComponent implements OnInit {
 
   getNotHaengend(): void {
     this.akteService.getNotHaengend().subscribe(({ body }) => {
-      this.haengend = body!.aktenMeter ?? 0;
+      this.notHaengend = body!.aktenMeter ?? 0;
     });
   }
 
