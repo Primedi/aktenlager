@@ -73,6 +73,12 @@ export class AkteComponent implements OnInit {
     });
   }
 
+  getNotHaengend(): void {
+    this.akteService.getNotHaengend().subscribe(({ body }) => {
+      this.haengend = body!.aktenMeter ?? 0;
+    });
+  }
+
   reset(): void {
     this.page = 0;
     this.aktes = [];
