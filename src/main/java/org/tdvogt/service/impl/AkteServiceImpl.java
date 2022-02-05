@@ -2,7 +2,6 @@ package org.tdvogt.service.impl;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -92,4 +91,15 @@ public class AkteServiceImpl implements AkteService {
         }
         return summe;
     }
+
+    @Override
+    public Long getAktenmeterHaengend() {
+        log.debug("Request to get Gesamtmeteranzahl aller haengenden Akten");
+        return akteRepository.sumAktenMeterByHaengend();
+    }
+    /*@Override
+    public Long getAktenMeterNotHaengend() {
+        return null;
+    }
+    */
 }
