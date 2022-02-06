@@ -7,6 +7,7 @@ export interface IRaum {
   etage?: number | null;
   zusatz?: string | null;
   aktes?: IAkte[] | null;
+  raumFuehrendeNull?: string | null;
 }
 
 export class Raum implements IRaum {
@@ -16,7 +17,8 @@ export class Raum implements IRaum {
     public raumnummer?: number | null,
     public etage?: number | null,
     public zusatz?: string | null,
-    public aktes?: IAkte[] | null
+    public aktes?: IAkte[] | null,
+    raumFuehrendeNull?: string | null
   ) {}
 }
 
