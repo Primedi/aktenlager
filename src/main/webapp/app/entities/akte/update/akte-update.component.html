@@ -67,7 +67,7 @@
               [ngValue]="raumOption.id === editForm.get('raum')!.value?.id ? editForm.get('raum')!.value : raumOption"
               *ngFor="let raumOption of raumsSharedCollection; trackBy: trackRaumById"
             >
-              {{ raumOption.id }}
+              {{ raumOption.gebaeude }}, {{ raumOption.zusatz }}{{ raumOption.etage }}0{{ raumOption.raumnummer }}
             </option>
           </select>
         </div>
