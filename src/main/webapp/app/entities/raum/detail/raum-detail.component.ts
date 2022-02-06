@@ -15,6 +15,15 @@ export class RaumDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ raum }) => {
       this.raum = raum;
+      let r: string | number | null | undefined = '0';
+      r = this.raum?.raumnummer;
+      if (r) {
+        if (r.valueOf() < 10) {
+          this.raum!.raumFuehrendeNull = `0${r.valueOf()}`;
+        } else {
+          this.raum!.raumFuehrendeNull = `this.raum!.raumnummer`;
+        }
+      }
     });
   }
 
