@@ -167,7 +167,7 @@ public class Raum implements Serializable {
 
     public String getGesamtStandort() {
         String geb = this.gebaeude != null ? this.gebaeude : "";
-        String rn = this.raumnummer != null ? this.raumnummer.toString() : "";
+        String rn = this.raumnummer != null ? this.raumnummer < 10L ? "0" + this.raumnummer : this.raumnummer.toString() : "";
         String et = this.etage != null ? this.etage.toString() : "";
         String zu = this.zusatz != null ? this.zusatz : "";
         return geb + ", " + zu + et + rn;
