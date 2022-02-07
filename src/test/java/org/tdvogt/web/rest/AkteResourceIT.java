@@ -115,7 +115,7 @@ class AkteResourceIT {
         assertThat(testAkte.getOrganisationsEinheit()).isEqualTo(DEFAULT_ORGANISATIONS_EINHEIT);
         assertThat(testAkte.getAktenMeter()).isEqualTo(DEFAULT_AKTEN_METER);
         assertThat(testAkte.getHaengend()).isEqualTo(DEFAULT_HAENGEND);
-        assertThat(testAkte.getStandort()).isEqualTo(DEFAULT_STANDORT);
+        assertThat(testAkte.getStandort()).isEqualTo("");
     }
 
     @Test
@@ -152,7 +152,7 @@ class AkteResourceIT {
             .andExpect(jsonPath("$.[*].organisationsEinheit").value(hasItem(DEFAULT_ORGANISATIONS_EINHEIT)))
             .andExpect(jsonPath("$.[*].aktenMeter").value(hasItem(DEFAULT_AKTEN_METER.intValue())))
             .andExpect(jsonPath("$.[*].haengend").value(hasItem(DEFAULT_HAENGEND.booleanValue())))
-            .andExpect(jsonPath("$.[*].standort").value(hasItem(DEFAULT_STANDORT)));
+            .andExpect(jsonPath("$.[*].standort").value(hasItem("")));
     }
 
     @Test
@@ -171,7 +171,7 @@ class AkteResourceIT {
             .andExpect(jsonPath("$.organisationsEinheit").value(DEFAULT_ORGANISATIONS_EINHEIT))
             .andExpect(jsonPath("$.aktenMeter").value(DEFAULT_AKTEN_METER.intValue()))
             .andExpect(jsonPath("$.haengend").value(DEFAULT_HAENGEND.booleanValue()))
-            .andExpect(jsonPath("$.standort").value(DEFAULT_STANDORT));
+            .andExpect(jsonPath("$.standort").value(""));
     }
 
     @Test
@@ -216,7 +216,7 @@ class AkteResourceIT {
         assertThat(testAkte.getOrganisationsEinheit()).isEqualTo(UPDATED_ORGANISATIONS_EINHEIT);
         assertThat(testAkte.getAktenMeter()).isEqualTo(UPDATED_AKTEN_METER);
         assertThat(testAkte.getHaengend()).isEqualTo(UPDATED_HAENGEND);
-        assertThat(testAkte.getStandort()).isEqualTo(UPDATED_STANDORT);
+        assertThat(testAkte.getStandort()).isEqualTo("");
     }
 
     @Test
@@ -305,7 +305,7 @@ class AkteResourceIT {
         assertThat(testAkte.getOrganisationsEinheit()).isEqualTo(UPDATED_ORGANISATIONS_EINHEIT);
         assertThat(testAkte.getAktenMeter()).isEqualTo(DEFAULT_AKTEN_METER);
         assertThat(testAkte.getHaengend()).isEqualTo(DEFAULT_HAENGEND);
-        assertThat(testAkte.getStandort()).isEqualTo(DEFAULT_STANDORT);
+        assertThat(testAkte.getStandort()).isEqualTo("");
     }
 
     @Test
@@ -343,7 +343,7 @@ class AkteResourceIT {
         assertThat(testAkte.getOrganisationsEinheit()).isEqualTo(UPDATED_ORGANISATIONS_EINHEIT);
         assertThat(testAkte.getAktenMeter()).isEqualTo(UPDATED_AKTEN_METER);
         assertThat(testAkte.getHaengend()).isEqualTo(UPDATED_HAENGEND);
-        assertThat(testAkte.getStandort()).isEqualTo(UPDATED_STANDORT);
+        assertThat(testAkte.getStandort()).isEqualTo("");
     }
 
     @Test
