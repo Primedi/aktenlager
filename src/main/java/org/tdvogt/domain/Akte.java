@@ -80,7 +80,7 @@ public class Akte implements Serializable {
 
     public Long getAktenMeter() {
         if (aktenMeter == null) {
-            aktenMeter = 0L;
+            aktenMeter = 1L;
         }
         return this.aktenMeter;
     }
